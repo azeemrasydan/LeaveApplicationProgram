@@ -19,35 +19,39 @@
                                  alt="Sample photo">
                             <div class="card-body p-4 p-md-5">
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Leave Details</h3>
+                                @using (Html.BeginForm("Create", "Home"))
+                                {
+                                    <form asp-action="Create" class="px-ml-2">
+                                        <div class="form-group m-4">
+                                            <label asp-for="Email">Email address</label>
+                                            @Html.AntiForgeryToken()
+                                            <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <label for="fullName">Full Name</label>
+                                            <input type="text" class="form-control" placeholder="Your full name">
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <label for="startDate">Start Date</label>
+                                            <input id="startDate" class="form-control" type="datetime-local" />
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <label for="endDate">End Date</label>
+                                            <input id="endDate" class="form-control" type="datetime-local" />
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <label for="exampleFormControlTextarea1">Justification</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <label for="fullName">Manager Name</label>
+                                            <input type="text" class="form-control" placeholder="Manager Name">
+                                        </div>
+                                        <button type="submit" class="btn btn-success btn-lg m-4">Submit</button>
 
-                                <form class="px-ml-2">
-                                    <div class="form-group m-4">
-                                        <label for="emailAddress">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group m-4">
-                                        <label for="fullName">Full Name</label>
-                                        <input type="text" class="form-control" placeholder="Your full name">
-                                    </div>
-                                    <div class="form-group m-4">
-                                        <label for="startDate">Start Date</label>
-                                        <input id="startDate" class="form-control" type="datetime-local" />
-                                    </div>
-                                    <div class="form-group m-4">
-                                        <label for="endDate">End Date</label>
-                                        <input id="endDate" class="form-control" type="datetime-local" />
-                                    </div>
-                                    <div class="form-group m-4">
-                                        <label for="exampleFormControlTextarea1">Justification</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group m-4">
-                                        <label for="fullName">Manager Name</label>
-                                        <input type="text" class="form-control" placeholder="Manager Name">
-                                    </div>
-                                    <button type="submit" class="btn btn-success btn-lg m-4">Submit</button>
+                                    </form>
+                                }
 
-                                </form>
 
                             </div>
                         </div>
